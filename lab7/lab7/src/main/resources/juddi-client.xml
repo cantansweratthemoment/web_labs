@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<uddi xmlns="urn:juddi-apache-org:v3_client"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="classpath:/xsd/uddi-client.xsd">
+
+    <client name="example-client">
+        <nodes>
+            <node>
+                <name>default</name>
+
+                <properties>
+                    <property name="serverName" value="localhost"/>
+                    <property name="serverPort" value="8080"/>
+                </properties>
+
+                <proxyTransport>org.apache.juddi.v3.client.transport.JAXWSTransport</proxyTransport>
+
+                <inquiryUrl>http://${serverName}:${serverPort}/juddiv3/services/inquiry?wsdl</inquiryUrl>
+                <publishUrl>http://${serverName}:${serverPort}/juddiv3/services/publish?wsdl</publishUrl>
+                <securityUrl>http://${serverName}:${serverPort}/juddiv3/services/security?wsdl</securityUrl>
+            </node>
+        </nodes>
+    </client>
+</uddi>
